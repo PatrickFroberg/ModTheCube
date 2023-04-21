@@ -1,4 +1,3 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
 [RequireComponent(typeof(MeshRenderer))]
@@ -32,9 +31,9 @@ public class ColorLoop : MonoBehaviour
         _isTransparent = !_isTransparent;
 
         if (_isTransparent)
-            _material.color = _material.color.WithAlpha(0.3f);
+            _material.color = new Color(_material.color.r, _material.color.g, _material.color.b, 0.3f);
         else
-            _material.color = _material.color.WithAlpha(1f);
+            _material.color = new Color(_material.color.r, _material.color.g, _material.color.b, 1f);
     }
 
     private Color Red()
